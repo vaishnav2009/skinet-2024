@@ -31,7 +31,6 @@ builder.Services.AddAuthorization();
 builder.Services.AddIdentityApiEndpoints<AppUser>()
     .AddEntityFrameworkStores<StoreContext>();
 
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

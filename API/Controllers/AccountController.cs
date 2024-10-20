@@ -53,7 +53,7 @@ public class AccountController(SignInManager<AppUser> signInManager) : BaseApiCo
 
         var user = await signInManager.UserManager.GetUserByEmailWithAddress(User);
 
-        return Ok(new 
+        return Ok(new
         {
             user.FirstName,
             user.LastName,
@@ -65,7 +65,7 @@ public class AccountController(SignInManager<AppUser> signInManager) : BaseApiCo
     [HttpGet]
     public ActionResult GetAuthState()
     {
-        return Ok(new {isAuthenticated = User.Identity?.IsAuthenticated ?? false});
+        return Ok(new { IsAuthenticated = User.Identity?.IsAuthenticated ?? false });
     }
 
     [Authorize]
@@ -73,12 +73,12 @@ public class AccountController(SignInManager<AppUser> signInManager) : BaseApiCo
     public async Task<ActionResult<Address>> CreateOrUpdateAddress(AddressDto addressDto)
     {
         var user = await signInManager.UserManager.GetUserByEmailWithAddress(User);
-        
+
         if (user.Address == null)
         {
             user.Address = addressDto.ToEntity();
         }
-        else
+        else 
         {
             user.Address.UpdateFromDto(addressDto);
         }

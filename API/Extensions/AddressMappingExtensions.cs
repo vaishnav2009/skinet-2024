@@ -17,7 +17,6 @@ public static class AddressMappingExtensions
             State = address.State,
             Country = address.Country,
             PostalCode = address.PostalCode,
-
         };
     }
 
@@ -33,7 +32,6 @@ public static class AddressMappingExtensions
             State = addressDto.State,
             Country = addressDto.Country,
             PostalCode = addressDto.PostalCode,
-
         };
     }
 
@@ -42,14 +40,11 @@ public static class AddressMappingExtensions
         if (addressDto == null) throw new ArgumentNullException(nameof(addressDto));
         if (address == null) throw new ArgumentNullException(nameof(address));
 
-
         address.Line1 = addressDto.Line1;
         address.Line2 = addressDto.Line2;
         address.City = addressDto.City;
         address.State = addressDto.State;
         address.Country = addressDto.Country;
         address.PostalCode = addressDto.PostalCode;
-
-
     }
 }

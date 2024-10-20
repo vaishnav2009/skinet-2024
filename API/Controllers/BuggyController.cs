@@ -29,7 +29,7 @@ public class BuggyController : BaseApiController
     [HttpGet("internalerror")]
     public IActionResult GetInternalError()
     {
-        throw new Exception("This is a text exception");
+        throw new Exception("This is a test exception");
     }
 
     [HttpPost("validationerror")]
