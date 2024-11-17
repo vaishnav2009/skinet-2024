@@ -1,0 +1,23 @@
+/* Container for the product image */
+.product-image-container {
+    position: relative;
+    max-width: 100%; 
+    max-height: 100%;/* Ensure responsiveness */
+  }
+  
+  /* Ensure smooth transitions for scaling */
+  #productImage {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease !important;
+    cursor: zoom-in; /* Hint the user that the image is zoomable */
+  }
+  
+  /* Prevent layout shift or overflow issues */
+  .image-wrapper {
+    overflow: hidden !important; /* Clip overflowing parts */
+    position: relative;
+  }
+  
